@@ -1,0 +1,42 @@
+<form [formGroup]="formulario">
+  <ion-item>
+    <ion-input type="text" formControlName="nombre" placeholder="Nombre"></ion-input>
+    <span *ngIf="formulario.get('nombre').touched && formulario.get('nombre').hasError('required')">Required</span> 
+  </ion-item>
+  <ion-item>
+    <ion-input type="number" formControlName="edad" placeholder="Edad"></ion-input>
+    <span *ngIf="formulario.get('edad').touched && formulario.get('edad').hasError('required')">Required</span> 
+  </ion-item>
+  <ion-item>
+    <ion-label>Sexo</ion-label>
+    <ion-select formControlName="sexo" placeholder="Elija una opcion">
+      <ion-select-option name="masculino" value="Masculino">Masculino</ion-select-option>
+      <ion-select-option name="Femenino" value="Femenino">Femenino</ion-select-option>
+    </ion-select>
+    <br>  
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ocupacion</ion-label>
+    <ion-select formControlName="ocupacion" placeholder="Elija una opcion">
+      <ion-select-option name="estudiante" value="Estudiante">Estudiante</ion-select-option>
+      <ion-select-option name="trabajador" value="Trabajador">Trabajador</ion-select-option>
+      <ion-select-option name="desempleado" value="Desempleado">Desempleado</ion-select-option>
+    </ion-select>
+    <br>  
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ciudad</ion-label>
+    <ion-select formControlName="ciudad" placeholder="Elija una opcion">
+      <ion-select-option name="tuxtla" value="Tuxtla Gutiérrez">Tuxtla Gutiérrez</ion-select-option>
+      <ion-select-option name="sancris" value="San Cristóbal">San Cristóbal</ion-select-option>
+      <ion-select-option name="chiapaCorzo" value="Chiapa de Corzo">Chiapa de Corzo</ion-select-option>
+      <ion-select-option name="suchiapa" value="Suchiapa">Suchiapa</ion-select-option>
+      <ion-select-option name="comitan" value="Comitán de Domínguez">Comitán de Domínguez</ion-select-option>
+    </ion-select>
+    <br>  
+  </ion-item>
+
+<ion-button type="button" (click)="crearPersona()" [disabled]="formulario.invalid">Crear</ion-button>
+</form>

@@ -1,5 +1,7 @@
 {
   "name": "datosOffline",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
